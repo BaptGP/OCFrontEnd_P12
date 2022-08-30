@@ -1,0 +1,28 @@
+.goal_chart {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 258px;
+  height: 263px;
+  border-radius: 5px;
+  background-color: #FBFBFB;
+}
+.goal_title {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 20px;
+}
+.goal_content {
+  text-align: center;
+  position: absolute;
+  top: 60px;
+}
+.goal_content .percentage {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.goal_content .legend {
+  margin: 5px 0px 5px 0px;
+}

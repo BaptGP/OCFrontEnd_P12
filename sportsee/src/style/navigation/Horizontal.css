@@ -1,0 +1,26 @@
+.nav_horizontal{
+    width:100vw;
+    height:10vh;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_horizontal ol {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    width:80vw;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+.App-logo{
+    width: 150px;
+}
