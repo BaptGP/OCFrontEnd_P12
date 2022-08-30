@@ -38,7 +38,7 @@ const Courbe = (props) => {
     <>
       <div className="average_duration_chart">
         <h2>Durée moyenne des sessions</h2>
-        <ResponsiveContainer width="100%" height="99%">
+        <ResponsiveContainer width="100%" height="100%">
           <LineChart data={props.average}>
             <Tooltip
               wrapperStyle={{ left: -10 }}

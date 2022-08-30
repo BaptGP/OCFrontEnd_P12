@@ -59,7 +59,7 @@ const RadarBarChart = (props) => {
     return (
       <>
         <div className="radar_bar_chart">
-          <ResponsiveContainer width={258} height={263}>
+          <ResponsiveContainer width={"100%"} height={"100%"}>
             <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
               <PolarGrid />
               <PolarAngleAxis

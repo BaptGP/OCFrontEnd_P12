@@ -9,6 +9,7 @@ main {
   width: 90vw;
   height: 90vh;
   position: absolute;
+  left: 5vw;
 }
 .graphics {
   width: 80%;
