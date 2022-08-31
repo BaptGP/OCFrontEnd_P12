@@ -32,7 +32,7 @@ const Courbe = (props) => {
         element.day = days[element.day];
       }
     }
-  }, []);
+  }, [props]);
 
   return (
     <>

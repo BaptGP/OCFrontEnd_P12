@@ -9,18 +9,18 @@ import Header from "./header";
 
 function Data() {
   const [data, setData] = useState(null);
-
+  let idUser = 12
   useEffect(() => {
     async function fetchGeneral() {
       /**
        * Get response of fetch in config
        * @param { Number } user 
        */
-      let response = await fetchData(12);
+      let response = await fetchData(idUser);
       setData(response);
     }
     fetchGeneral();
-  }, []);
+  }, [idUser]);
 
   if (data) {
     return (
@@ -30,8 +30,8 @@ function Data() {
           <div className="graphics">
             <BarData sessions={data.activity.data.sessions} />
             <div className="graphics-row">
-              <Courbe average={data.averageSession.data.sessions} />
-              <RadarBarChart performance={data.performance.data} kinds={data.performance.data.kind}/>
+              <Courbe average={data.averageSession.data.sessions}/>
+              <RadarBarChart performance={data.performance.data}/>
               <Score goal={data.userInfos.data.todayScore} />
             </div>
           </div>

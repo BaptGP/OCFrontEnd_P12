@@ -6,13 +6,11 @@ import "../../style/Recharts/score.css";
 function Score(props) {
   const [data, setData] = useState(null);
   const [goal, setGoal] = useState(null);
-  const [goalIsLoading, setGoalIsLoading] = useState(false);
 
   useEffect(() => {
     setData([{ name: "score", score: props.goal }]);
     setGoal(props.goal);
-    setGoalIsLoading(true);
-  }, []);
+  }, [props]);
   return (
     <>
       <div className="goal_chart">

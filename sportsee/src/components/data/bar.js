@@ -48,7 +48,7 @@ const BarData = (props) => {
   return (
     <>
       <div className="activity_chart">
-        <h2>Acitvité quotidienne</h2>
+        <h2>Activité quotidienne</h2>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={props.sessions}

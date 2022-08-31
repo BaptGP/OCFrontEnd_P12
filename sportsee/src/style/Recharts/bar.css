@@ -15,7 +15,7 @@
 .daily_chart_tooltip {
   background-color: red;
   color: white;
-  font-size: 8px;
+  font-size: 15px;
   padding: 2.5px;
 }
 .daily_chart_tooltip p {

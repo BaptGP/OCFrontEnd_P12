@@ -53,7 +53,7 @@ const RadarBarChart = (props) => {
     //Update state
     setData(performance.data);
     setDataIsLoading(true);
-  }, []);
+  }, [props]);
 
   if (dataIsLoading) {
     return (
@@ -65,7 +65,7 @@ const RadarBarChart = (props) => {
               <PolarAngleAxis
                 tickLine={false}
                 stroke="white"
-                dataKey={"kind"}
+                dataKey="kind"
                 fontSize={10}
               />
               <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
