@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { LineChart, XAxis, Line, Tooltip, ResponsiveContainer } from "recharts";
 import "../../style/Recharts/courbe.css";
 
 const Courbe = (props) => {
+  const [data, setData] = useState(null);
   /**
    * Custom tooltip of LineChart
    * @param { Object } payload
@@ -32,40 +33,45 @@ const Courbe = (props) => {
         element.day = days[element.day];
       }
     }
+    setData(average);
   }, [props]);
 
-  return (
-    <>
-      <div className="average_duration_chart">
-        <h2>Durée moyenne des sessions</h2>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={props.average}>
-            <Tooltip
-              wrapperStyle={{ left: -10 }}
-              cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 100 }}
-              content={<CustomTooltip />}
-            />
-            <XAxis
-              tick={{ opacity: 0.5 }}
-              tickLine={false}
-              axisLine={false}
-              stroke="white"
-              dataKey={"day"}
-            />
-            <Line
-              type="monotone"
-              dataKey="sessionLength"
-              stroke="white"
-              strokeOpacity="1"
-              dot=""
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-    </>
-  );
+  if (data) {
+    return (
+      <>
+        <div className="average_duration_chart">
+          <h2>Durée moyenne des sessions</h2>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={data}>
+              <Tooltip
+                wrapperStyle={{ left: -10 }}
+                cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 100 }}
+                content={<CustomTooltip />}
+              />
+              <XAxis
+                tick={{ opacity: 0.5 }}
+                tickLine={false}
+                axisLine={false}
+                stroke="white"
+                dataKey="day"
+              />
+              <Line
+                type="monotone"
+                dataKey="sessionLength"
+                stroke="white"
+                strokeOpacity="1"
+                dot=""
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </>
+    );
+  } else {
+    return null;
+  }
 };
 Courbe.propTypes = {
-  average: PropTypes.array,
+  average: PropTypes.array.isRequired,
 };
 export default Courbe;

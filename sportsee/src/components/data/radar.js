@@ -80,8 +80,7 @@ const RadarBarChart = (props) => {
 };
 
 RadarBarChart.propTypes = {
-  performance: PropTypes.object,
-  kind: PropTypes.object,
+  performance: PropTypes.object.isRequired,
 };
 
 export default RadarBarChart;
